@@ -20,6 +20,6 @@ ALTER TABLE ServiciosSpa Add Constraint CK_ServiciosSpa_Estado Check(estado = 'P
 
 ALTER TABLE Historias ADD CONSTRAINT CK_Historias_ClaseAnimal CHECK (claseAnimal = 'Canino' OR claseAnimal = 'Felino' OR claseAnimal = 'Pez' OR claseAnimal = 'Roedor' OR claseAnimal = 'Ave');
 ALTER TABLE Historias ADD CONSTRAINT CK_Historias_sexo CHECK (sexo = 'Macho' OR sexo = 'Hembra');
-ALTER TABLE Historias ADD CONSTRAINT CK_Historias_peso CHECK (peso > 0 AND peso < 100);
+ALTER TABLE Historias ADD CONSTRAINT CK_Historias_peso CHECK (peso > 0 AND peso < 101);
 
 ALTER TABLE Especialidades ADD CONSTRAINT CK_Especialidades_especialidad CHECK (especialidad = 'Caninos' OR especialidad = 'Felinos');

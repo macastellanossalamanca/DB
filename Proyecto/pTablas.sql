@@ -11,7 +11,7 @@ Create Table InsumosMedicos(servicioMedico number not null, producto number not 
 Create Table TomaServicioMedico(mascotaID number not null, servicioMedico number not null);
 Create Table TomaServicioSpa(mascotaID number not null, servicioSpa number not null);
 Create Table Especialidades(veterinarioTID varchar(50), veterinarioNumID number, especialidad varchar(50));
-Create Table Historias(hID number, mID number, raza varchar(100), alergias varchar(100), fechaNacimiento Date, claseAnimal varchar(50), sexo varchar(50), peso number);
+Create Table Historias(hID number, mID number, raza varchar(100), alergias varchar(150) default 'Ninguna', fechaNacimiento Date, claseAnimal varchar(50), sexo varchar(50), peso number);
 Create Table Responsables(tID varchar(50), numID number, nombre varchar(50), numTelefono number, email varchar(50));
 Create Table Facturas(fID number, responsabletID varchar(50), responsableNumID number, valor number, estado varchar(50));
 

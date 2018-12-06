@@ -18,8 +18,8 @@ Delete from Facturas;
 
 
 
-
-/* Borrado de la base de datos
+--Borrado de la base de datos
+/*
 BEGIN
    FOR cur_rec IN (SELECT object_name, object_type
                     FROM user_objects
