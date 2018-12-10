@@ -31,3 +31,7 @@ Alter Table TomaServicioSpa Add Constraint FK_TomaServicioSpa_S Foreign Key(serv
 Alter Table Especialidades Add Constraint FK_Especialidades_V Foreign Key(veterinarioTID,veterinarioNumID) references Empleados(tID,numID)on delete cascade;
 Alter Table Historias Add Constraint FK_Historias_Mascota Foreign Key(mID) references Mascotas(mID)on delete cascade;
 Alter Table Facturas Add Constraint FK_Factura_Responsable Foreign Key(responsabletID, responsableNumID) references Responsables(tID,numID)on delete cascade;
+
+--Llaves Unicas
+
+ALTER TABLE Empleados Add Constraint UK_Empleados_Correo Unique(email);

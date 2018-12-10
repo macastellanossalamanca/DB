@@ -34,7 +34,13 @@ END ELIMINAR_SERVICIOSSPA;
 /
 -- REGISTRAR SERVICIOS MEDICOS
 
+-- Se actualiza el costo del servicio adicionando el costo de cada uno de los insumos al costo total
+
+--CREATE OR REPLACE TRIGGER ACTUALIZAR_COSTO
+
+
 -- El ID y la fecha del servicio se generan automaticamente, además se asignan automaticamente el costo a cada tipo de servicio
+
 CREATE OR REPLACE TRIGGER ADICION_SERVICIOSMEDICOS
 BEFORE INSERT ON ServiciosMedicos
 FOR EACH ROW
@@ -57,14 +63,13 @@ BEGIN
     END IF;
 END ADICION_SERVICIOMEDICOS;
 /
--- El costo del servicio Médico no se puede modificar, tampoco su ID
+-- No se puede modificar el ID del servicio Medico
 
 CREATE OR REPLACE TRIGGER MODIFICAR_SERVICIOSMEDICOS
 BEFORE UPDATE ON ServiciosMedicos
 FOR EACH ROW
 BEGIN
     :NEW.SMID := :OLD.SMID;
-    :NEW.costo := :OLD.costo;
 END MODIFICAR_SERVICIOSMEDICOS;
 /
 

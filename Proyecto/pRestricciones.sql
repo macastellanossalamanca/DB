@@ -13,6 +13,7 @@ ALTER TABLE Empleados ADD CONSTRAINT CK_Empleados_telefono CHECK (numTelefono > 
 ALTER TABLE Empleados ADD CONSTRAINT CK_Empleados_tID CHECK (tID = 'CC' OR tID = 'CE');
 ALTER TABLE Empleados Add Constraint CK_Empleados_Correo Check(email like '%_@_%._%');
 
+
 ALTER TABLE ServiciosMedicos Add Constraint CK_ServiciosMedicos Check(tipoServicio = 'Consulta' or tipoServicio = 'Cirugia' or tipoServicio = 'Imagen Diagnostica' or tipoServicio = 'Odontologia' or tipoServicio = 'Hospitalizacion');
 ALTER TABLE ServiciosMedicos Add Constraint CK_ServiciosMedicos_Estado Check(estado = 'Pendiente' or estado = 'Despachado');
 ALTER TABLE ServiciosSpa Add Constraint CK_ServiciosSpa Check (tipoSpa = 'Baño' or tipoSpa = 'Peluqueria');
@@ -22,4 +23,4 @@ ALTER TABLE Historias ADD CONSTRAINT CK_Historias_ClaseAnimal CHECK (claseAnimal
 ALTER TABLE Historias ADD CONSTRAINT CK_Historias_sexo CHECK (sexo = 'Macho' OR sexo = 'Hembra');
 ALTER TABLE Historias ADD CONSTRAINT CK_Historias_peso CHECK (peso > 0 AND peso < 101);
 
-ALTER TABLE Especialidades ADD CONSTRAINT CK_Especialidades_especialidad CHECK (especialidad = 'Caninos' OR especialidad = 'Felinos');
+ALTER TABLE Especialidades ADD CONSTRAINT CK_Especialidades_especialidad CHECK (especialidad = 'Caninos' OR especialidad = 'Felinos' OR especialidad = 'General');

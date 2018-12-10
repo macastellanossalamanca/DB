@@ -3,7 +3,7 @@
 
 Create TABLE Mascotas (mID NUMBER not null, nombre varchar(100) not null, responsabletID varchar(50), responsableNumID number);
 Create TABLE ServiciosSpa (SSID NUMBER not null, tipoSpa varchar(50), costo number not null,estado varchar(50), fecha Date);
-Create Table Productos (PID number not null, costo number not null);
+Create Table Productos (PID number not null, costo number not null, informacion XMLTYPE);
 Create Table ProductosBaño(bañoID number not null,producto number not null);
 Create Table Empleados(tID varchar(50), numID number, nombre varchar(100), salario number,email varchar(100), numTelefono number);
 Create Table ServiciosMedicos(SMID number not null, tipoServicio varchar(100) not null, costo number, veterinarioTID varchar(50), veterinarioNumID number, estado varchar(50), fecha Date);
