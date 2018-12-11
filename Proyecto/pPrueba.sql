@@ -22,3 +22,22 @@ EXECUTE pa_empleado.ad_responsables('CC', 2, 'Wilbur', 4491040584, 'whatto1@over
 EXECUTE PA_EMPLEADO.AD_MASCOTAS(2, 'Janetta', 'CC', 1);
 EXECUTE PA_EMPLEADO.AD_MASCOTAS(3, 'Valeda', 'CC', 2);
 
+-- Despues de indicar al empleado el servicio que deseaban, se procede a guardar la informacion
+
+EXECUTE pa_empleado.ad_historias(1, 2, 'Squirrel, palm', 'Ondansetron', '19/10/2018', 'Pez', 'Macho', 4);
+EXECUTE pa_empleado.ad_historias(2, 3, 'Shelduck, european', 'Phenylephrine HCl', '12/3/2018', 'Ave', 'Macho', 17);
+
+-- Se procede a agregar los servicios solicitados a la base de datos
+
+EXECUTE pc_serviciosmedicos.ad_serviciosmedicos('Consulta', 10000, 'CC', 552, 'Pendiente');
+EXECUTE pc_serviciosmedicos.ad_serviciosmedicos('Cirugia', 10000, 'CC', 552, 'Pendiente');
+
+-- Se asigna cada servicio a cada mascota
+
+EXECUTE pc_serviciosmedicos.ad_toma_serviciomedico(2,1);
+EXECUTE pc_serviciosmedicos.ad_toma_serviciomedico(3,2);
+
+-- Nuestros nuevos clientes despues de tomar el servicio generan un reporte con quejas sobre el veterinario Wilbur, 
+--por lo que se toman medidas y debe dejar la veterinaria
+
+execute pa_administrador.el_empleados('CC',2);
